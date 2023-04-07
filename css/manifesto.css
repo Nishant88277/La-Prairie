@@ -1,0 +1,120 @@
+.lr-manifesto-container {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lp-manifesto-media-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: center;
+  justify-items: center;
+  overflow: hidden;
+  max-width: min(1920px, 100vw);
+}
+
+.lp-manifesto-media {
+  max-width: min(1920px, 100vw);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.lp-manifesto-media.finished {
+  position: block;
+}
+
+.lp-manifesto-content-text-item {
+  height: 100vh;
+  z-index: 5;
+}
+
+.lp-manifesto-content-text-container {
+  position: relative;
+}
+
+.lp-manifesto-content-text-item {
+  z-index: 1;
+  text-align: center;
+  max-width: 763px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lp-manifesto-content-text-item h1 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.lp-manifesto-content-text-item p {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.lp-manifesto-content-text-container
+  .pin-spacer:first-child
+  .lp-manifesto-content-text-item
+  p {
+  text-transform: none;
+}
+
+@media only screen and (min-width: 769px) {
+  .lp-manifesto-content-text-item,
+  .lp-manifesto-content-text-spacer {
+    max-width: 763px;
+    height: 100vh;
+  }
+
+  .lp-manifesto-content-text-container
+    .pin-spacer:first-child
+    .lp-manifesto-content-text-item
+    p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  .lp-manifesto-content-text-item p {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 64px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .lp-manifesto-content-text-item,
+  .lp-manifesto-content-text-spacer {
+    height: 100vh;
+  }
+
+  .pin-spacer:first-child .lp-manifesto-content-text-item p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0;
+  }
+
+  .lp-manifesto-content-text-item p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin: 0 44px;
+  }
+
+  .each-history-year h2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .each-history-year p {
+    font-size: 16px;
+  }
+}
+
+picture .lp-manifesto-media {
+  display: none;
+}
