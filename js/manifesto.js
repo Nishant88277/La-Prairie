@@ -40,5 +40,89 @@ Array.from(document.querySelectorAll('.lr-manifesto-container')).forEach((manife
     		scrub: 0.5,
     		markers: false
 	      }
-	}, "1");
-});
+		}, "1");
+	});
+	
+	
+//  peragraph reveling animation......
+	
+const paragraphDiv = document.querySelectorAll('.lp-manifesto-content-text-item')
+const textDiv = document.querySelectorAll('.lp-manifesto-content-text-item p')
+
+// assining new innerHtml with span tag to every paragraph.
+paragraphDiv[1].children[0].innerHTML = linecount(paragraphDiv[1].children[0].firstChild)
+paragraphDiv[2].children[0].innerHTML = linecount(paragraphDiv[2].children[0].firstChild)
+paragraphDiv[3].children[0].innerHTML = linecount(paragraphDiv[3].children[0].firstChild)
+paragraphDiv[4].children[0].innerHTML = linecount(paragraphDiv[4].children[0].firstChild)
+
+
+// function for rendered lines of text from the given textNode as it
+// exists in the document at this very moment.
+function linecount(textnode){
+	let textNode = textnode
+
+	textNode.textContent = collapseWhiteSpace(textNode.textContent);
+
+	let textContent = textNode.textContent;
+	let range = document.createRange();
+	let lines = [];
+	let lineChar = [];
+
+	for( let i = 0; i < textContent.length; i++){
+		range.setStart( textNode, 0);
+		range.setEnd( textNode, (i + 1))
+
+		let lineIndex = (range.getClientRects().length - 1);
+
+		if(! lines[lineIndex]){
+			lines.push(lineChar = []);
+		}
+
+		lineChar.push( textContent.charAt(i));
+	}
+
+	lines = lines.map(
+		function operator(characters){
+			return (collapseWhiteSpace(characters.join('')))
+		}
+	)
+
+	let htmlStr = ''
+	const str = lines.map((line)=>{
+		htmlStr += `<span>${line}</span> `
+	})
+
+	// returning string. 
+	return htmlStr
+}
+
+function collapseWhiteSpace( value ) {
+	return( value.trim().replace( /\s+/g , " " ) );
+}
+
+
+textDiv.forEach((line)=>{
+	let item = line.querySelectorAll('span')
+	item.forEach((item, index)=>{
+		gsap.from(item,{
+			opacity:0,
+			y:'5px',
+			duration:.5,			
+			ease: Power3.easeIn,
+			scrollTrigger:{
+				trigger: item,
+				start: start(index),
+				end: 'bottom bottom',
+				scrub: 2,
+			}
+		})
+	})
+})
+
+
+// setting starting point for every single span.
+function start(index){
+	let point = ''
+
+	return point = window.innerWidth < 480 ? 'top' + ' ' + (660 - (index * 30)) : 'top' + ' ' + (720 - (index * 60))
+}

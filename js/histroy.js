@@ -69,3 +69,18 @@ Array.from(document.querySelectorAll('.history-section')).forEach((history)=>{
 		}, "1");
 	});
 });
+
+// image scroll-up animation
+
+const firstImage = document.querySelector('.lp-manifesto-media-container')
+		gsap.to(firstImage, {
+			y:'-100%',
+			duration:.5,
+			scrollTrigger:{
+				triger: firstImage,
+				start: 'center 100',
+				end: "+=1000",
+				scrub: .5,
+			}
+			
+		})

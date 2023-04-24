@@ -10,18 +10,20 @@
 }
 
 .lp-history-media-container {
-  position: absolute;
+  position: fixed;
+  z-index: -2;
+  top: 0;
 }
-
+/* 
 .lp-history-media-container.locked {
   position: fixed;
   top: 0;
-}
+} */
 
-.lp-history-media-container.locked-bottom {
+/* .lp-history-media-container.locked-bottom {
   position: absolute;
   bottom: 0;
-}
+} */
 .history-basic {
   z-index: 1;
   text-align: center;

@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+}
+
 .lr-manifesto-container {
   align-items: center;
   justify-content: center;
@@ -61,6 +65,10 @@
   .lp-manifesto-content-text-item
   p {
   text-transform: none;
+}
+
+.lp-manifesto-content-text-item p span{
+  display: inline-block;
 }
 
 @media only screen and (min-width: 769px) {
