@@ -8,6 +8,7 @@
 	<title>GSAP</title>
 	<link rel="stylesheet" href="css/manifesto.css">
 	<link rel="stylesheet" href="css/histroy.css">
+	<link rel="stylesheet" href="css/people_container.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
@@ -45,9 +46,9 @@
 	<section class="history-section" id="history-section">
 		<div class="history-starter">
 			<div class="lp-history-media-container">
-				 <picture>
+				<picture>
 					<img class="lp-manifesto-media" src="./assets/history.png" alt="{{ manifesto_image_alt_text }}" />
-				</picture> 
+				</picture>
 				<video preload loop autoplay muted src="./assets/2.mp4" class="lp-manifesto-media"></video>
 
 			</div>
@@ -92,6 +93,28 @@
 			</div>
 		</div>
 	</section>
+	<section id="people-wrapper">
+		<div class="people-section-middle-content">
+			<div id="people-first-screen-content-wrapper" class="people-first-screen-content-wrapper">
+				<h1 class="people-data-title">Board</h1>
+				<p>Erat integer ipsum maecenas tempor odio morbi magnis in. Neque, molestie tincidunt sit nibh vehicula lobortis in. Laoreet cursus blandit malesuada aliquam. Vestibulum scelerisque senectus nulla proin blandit.</p>
+			</div>
+		</div>
+		<div class="person_info">
+			<a href="#" title="title">
+				<h2>Philippe Lamy</h2>
+				<span>CEO</span>
+			</a>
+			<h5>“Nibh tincidunt euismod mauris euismod turpis et varius. Fringilla pulvinar ultricies rutrum justo, egestas amet dictumst nisl, nam. ” </h5>
+			<div><p>In sit accumsan ut netus molestie. Diam bibendum posuere consequat pellentesque pulvinar tincidunt. Id ut arcu cursus eu eu eget ornare augue vel. Amet volutpat pretium tortor dapibus duis. Suspendisse volutpat mattis interdum scelerisque viverra. Tellus sollicitudin penatibus amet volutpat imperdiet cras. Nibh tincidunt euismod mauris euismod turpis et varius. Fringilla pulvinar ultricies rutrum justo, egestas amet dictumst nisl, nam.</p>
+			</div>
+		</div>
+		<div class="person_image">
+			<picture>
+				<img src="./assets/image 12.png" alt="person_image" />
+			</picture>
+		</div>
+	</section>
 	<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
@@ -102,6 +125,7 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="js/manifesto.js"></script>
 	<script src="js/histroy.js"></script>
+	<script src="js/person_component.js"></script>
 </body>
 
 </html>
